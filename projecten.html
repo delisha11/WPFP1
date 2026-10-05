@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!--
+        Zorgt ervoor dat de website op verschillende schermformaten
+        correct wordt weergegeven.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projecten - Delisha Ashruf</title>
+
+    <!--
+        Het CSS-bestand staat los van de HTML.
+        Hierdoor houd ik structuur en opmaak gescheiden.
+    -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="container">
+
+        <nav>
+
+            <!--
+                De navigatie is opgebouwd als een lijst.
+                CSS zorgt ervoor dat de links horizontaal worden weergegeven.
+            -->
+            <ul>
+
+                <!-- Link naar de homepage. -->
+                <li>
+                    <a href="index.html">whoami</a>
+                </li>
+
+                <!--
+                    Dit is de huidige pagina.
+                    class="active" zorgt ervoor dat CSS deze link
+                    visueel als actieve pagina kan aangeven.
+                -->
+                <li>
+                    <a href="projecten.html" class="active">Projecten</a>
+                </li>
+
+                <!-- Link naar de blogpagina. -->
+                <li>
+                    <a href="blog.html">Blog</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="container page">
+
+    <!--
+        Dit label geeft aan op welke pagina de bezoeker zich bevindt.
+    -->
+    <div class="label">— Projecten</div>
+
+    <!-- Hoofdtitel van de pagina. -->
+    <h1>Wat ik heb gemaakt</h1>
+
+    <!--
+        Korte uitleg over wat de bezoeker op deze pagina kan vinden.
+    -->
+    <p class="intro">
+        Een overzicht van opdrachten en projecten die ik tijdens mijn opleiding
+        heb gemaakt. Hier laat ik zien wat ik heb geleerd met C++ en Java.
+    </p>
+
+    <!--
+        Dit is de container waarin alle projectkaarten staan.
+
+        CSS Grid wordt gebruikt om de projecten
+        in kolommen te plaatsen.
+    -->
+    <section class="project-grid">
+
+
+        <!-- ==================== -->
+        <!-- C++ OPDRACHT 1 -->
+        <!-- ==================== -->
+
+        <!--
+            aria-label geeft een duidelijke beschrijving
+            van de link voor schermlezers.
+        -->
+        <a
+            href="https://github.com/delisha11/c-/tree/main/opg1PM"
+            class="project project-cpp"
+            aria-label="Bekijk C++ Basisprogrammeren"
+        >
+
+            <!--
+                Deze div bevat de afbeelding en het pijltje.
+                position: relative in CSS maakt het mogelijk
+                om het pijltje bovenop de afbeelding te plaatsen.
+            -->
+            <div class="project-image">
+
+                <!--
+                    alt beschrijft de afbeelding.
+                    Dit is belangrijk voor toegankelijkheid.
+                -->
+                <img
+                    src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&h=700&fit=crop&auto=format"
+                    alt="C++ Basisprogrammeren"
+                >
+
+                <!--
+                    Het pijltje is een visueel element.
+                    CSS maakt het zichtbaar wanneer de gebruiker
+                    over de projectkaart hovert.
+                -->
+                <span class="project-arrow">→</span>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <!--
+                    Status geeft aan wat voor soort project dit is.
+                -->
+                <span class="status">
+                    schoolopdracht
+                </span>
+
+                <!-- Titel van het project. -->
+                <h2>C++ Basisprogrammeren</h2>
+
+                <!-- Korte omschrijving van het project. -->
+                <p class="tagline">
+                    Mijn eerste programmeeropdracht in C++
+                </p>
+
+                <!-- Uitgebreidere projectbeschrijving. -->
+                <p>
+                    Een programmeeropdracht waarin ik de basis van C++ heb
+                    geleerd en toegepast. Hierbij heb ik geoefend met het
+                    opbouwen van een programma en het schrijven van logica.
+                </p>
+
+
+                <!--
+                    De tags geven extra informatie over de technologie
+                    of onderwerpen die bij het project horen.
+                -->
+                <div class="tags">
+
+                    <span class="tag">C++</span>
+                    <span class="tag">Programmeren</span>
+
+                </div>
+
+
+                <!-- Linktekst waarmee de bezoeker naar het project kan. -->
+                <span class="project-link-text">
+                    Bekijk project →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- ==================== -->
+        <!-- C++ OPDRACHT 2 -->
+        <!-- ==================== -->
+
+        <a
+            href="https://github.com/delisha11/c-/tree/main/opg2"
+            class="project project-cpp"
+            aria-label="Bekijk C++ Functies en Logica"
+        >
+
+            <div class="project-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=700&fit=crop&auto=format"
+                    alt="C++ Functies en Logica"
+                >
+
+                <span class="project-arrow">→</span>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <span class="status">
+                    schoolopdracht
+                </span>
+
+                <!--
+                    &amp; is de HTML-entiteit voor het &-teken.
+
+                    HTML gebruikt bepaalde speciale tekens als entities
+                    zodat ze correct als tekst worden geïnterpreteerd.
+                -->
+                <h2>C++ Functies &amp; Logica</h2>
+
+                <p class="tagline">
+                    Verder bouwen op de basis van C++
+                </p>
+
+                <p>
+                    In deze opdracht heb ik verder geoefend met programmeren
+                    in C++. De focus lag op het toepassen van functies en
+                    programmeerlogica om een programma overzichtelijk op te bouwen.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">C++</span>
+                    <span class="tag">Functies</span>
+                    <span class="tag">Logica</span>
+
+                </div>
+
+                <span class="project-link-text">
+                    Bekijk project →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- ==================== -->
+        <!-- NONOGRAM -->
+        <!-- ==================== -->
+
+        <a
+            href="https://github.com/delisha11/c-/tree/main/opg3"
+            class="project project-cpp"
+            aria-label="Bekijk Nonogram"
+        >
+
+            <div class="project-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=700&fit=crop&auto=format"
+                    alt="Nonogram"
+                >
+
+                <span class="project-arrow">→</span>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <span class="status">
+                    schoolopdracht
+                </span>
+
+                <h2>Nonogram</h2>
+
+                <p class="tagline">
+                    Een logisch puzzelspel gemaakt in C++
+                </p>
+
+                <p>
+                    Voor Programmeermethoden heb ik samen met Joelle Tiao
+                    een Nonogram-puzzel gemaakt in C++. De speler kan door
+                    de puzzel bewegen, vakken aanpassen en verschillende
+                    instellingen gebruiken.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">C++</span>
+                    <span class="tag">Classes</span>
+                    <span class="tag">Arrays</span>
+
+                </div>
+
+                <span class="project-link-text">
+                    Bekijk project →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- ==================== -->
+        <!-- GOMOKU -->
+        <!-- ==================== -->
+
+        <a
+            href="https://github.com/delisha11/c-/tree/main/opg4"
+            class="project project-cpp"
+            aria-label="Bekijk Gomoku"
+        >
+
+            <div class="project-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=1200&h=700&fit=crop&auto=format"
+                    alt="Gomoku"
+                >
+
+                <span class="project-arrow">→</span>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <span class="status">
+                    schoolopdracht
+                </span>
+
+                <h2>Gomoku</h2>
+
+                <p class="tagline">
+                    Een bordspel waarbij je als eerste vijf stenen op een rij krijgt
+                </p>
+
+                <p>
+                    Voor Programmeermethoden heb ik samen met Joelle Tiao
+                    een Gomoku-spel gemaakt in C++. Het programma ondersteunt
+                    speler tegen speler, speler tegen computer en computer
+                    tegen computer.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">C++</span>
+                    <span class="tag">Classes</span>
+                    <span class="tag">Pointers</span>
+                    <span class="tag">Arrays</span>
+
+                </div>
+
+                <span class="project-link-text">
+                    Bekijk project →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- ==================== -->
+        <!-- ECONect -->
+        <!-- ==================== -->
+
+        <a
+            href="https://github.com/LeakyIO/EcoNectDesktopGUI"
+            class="project project-java"
+            aria-label="Bekijk EcoNect Desktop GUI"
+        >
+
+            <!--
+                project-java zorgt ervoor dat dit project
+                door de Java-filter herkend kan worden.
+            -->
+            <div class="project-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=700&fit=crop&auto=format"
+                    alt="EcoNect Desktop GUI"
+                >
+
+                <span class="project-arrow">→</span>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <span class="status">
+                    challenge
+                </span>
+
+                <h2>EcoNect Desktop GUI</h2>
+
+                <p class="tagline">
+                    Een Java challenge met een grafische interface
+                </p>
+
+                <p>
+                    Voor deze challenge heb ik gewerkt aan een desktopapplicatie
+                    in Java. Hierbij heb ik gewerkt met objectgeoriënteerd
+                    programmeren en een grafische gebruikersinterface.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Java</span>
+                    <span class="tag">OOP</span>
+                    <span class="tag">GUI</span>
+
+                </div>
+
+                <span class="project-link-text">
+                    Bekijk project →
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- ==================== -->
+        <!-- HOTEL SIMULATOR -->
+        <!-- ==================== -->
+
+        <a
+            href="https://github.com/danjazhang/SE2"
+            class="project project-java"
+            aria-label="Bekijk Hotel Simulator"
+        >
+
+            <div class="project-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=700&fit=crop&auto=format"
+                    alt="Hotel Simulator"
+                >
+
+                <span class="project-arrow">→</span>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <span class="status">
+                    schoolproject
+                </span>
+
+                <h2>Hotel Simulator</h2>
+
+                <p class="tagline">
+                    Een hotelsimulatie gemaakt met Java
+                </p>
+
+                <p>
+                    Een Java-project waarin een hotelsimulatie is ontwikkeld.
+                    Hierbij is gewerkt met Swing, MVC en verschillende onderdelen
+                    voor het simuleren van gebeurtenissen in een hotel.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Java</span>
+                    <span class="tag">Swing</span>
+                    <span class="tag">MVC</span>
+                    <span class="tag">JUnit</span>
+
+                </div>
+
+                <span class="project-link-text">
+                    Bekijk project →
+                </span>
+
+            </div>
+
+        </a>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-content">
+
+        <p>
+            © 2026 Delisha Ashruf — Mijn portfolio
+        </p>
+
+        <div class="links">
+
+            <a
+                href="https://github.com/delisha11"
+                target="_blank"
+            >
+                GitHub
+            </a>
+
+            <a
+                href="https://linkedin.com"
+                target="_blank"
+            >
+                LinkedIn
+            </a>
+
+            <a href="mailto:delishaashruf@gmail.com">
+                delishaashruf@gmail.com
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>

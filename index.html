@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!--
+        Deze viewport-instelling zorgt ervoor dat de website
+        zich aanpast aan de breedte van het scherm.
+        
+        Zonder deze regel kan een website op een telefoon
+        veel te klein worden weergegeven.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- De tekst die bijvoorbeeld in het browsertabblad verschijnt. -->
+    <title>Whoami - Delisha Ashruf</title>
+
+    <!--
+        Hier wordt mijn externe CSS-bestand gekoppeld.
+        
+        Daardoor staat de opmaak niet rechtstreeks in de HTML,
+        maar apart in style.css.
+    -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <!--
+        .container zorgt ervoor dat de navigatie
+        dezelfde maximale breedte gebruikt als de rest
+        van mijn website.
+    -->
+    <div class="container">
+
+        <nav>
+
+            <!--
+                De navigatie is een ongeordende lijst.
+                CSS zorgt ervoor dat deze links naast elkaar
+                worden weergegeven.
+            -->
+            <ul>
+
+                <!--
+                    class="active" markeert de huidige pagina.
+                    In style.css krijgt deze link daardoor
+                    een accentkleurige lijn onder zich.
+                -->
+                <li>
+                    <a href="index.html" class="active">whoami</a>
+                </li>
+
+                <!-- Link naar de projectenpagina. -->
+                <li>
+                    <a href="projecten.html">Projecten</a>
+                </li>
+
+                <!-- Link naar de blogpagina. -->
+                <li>
+                    <a href="blog.html">Blog</a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<!--
+    main bevat de belangrijkste inhoud van deze pagina.
+    
+    De classes container en page zorgen samen voor
+    de maximale breedte en de ruimte rondom de inhoud.
+-->
+<main class="container page">
+
+
+    <!--
+        HERO-SECTIE
+        
+        Dit is het eerste grote gedeelte dat de bezoeker ziet.
+        Hier staat mijn naam, korte introductie en foto.
+    -->
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <!-- Klein label boven de hoofdtekst. -->
+            <div class="label">— whoami</div>
+
+            <!--
+                h1 is de belangrijkste titel van de pagina.
+                <br> zorgt ervoor dat mijn voor- en achternaam
+                op twee regels komen.
+                
+                De span wordt gebruikt om alleen "Ashruf"
+                een grijze kleur te geven.
+            -->
+            <h1>
+                Delisha<br>
+                <span style="color:#6b6b6b;">Ashruf</span>
+            </h1>
+
+            <!--
+                Korte introductie over mijzelf.
+                De class intro zorgt voor de juiste
+                tekstgrootte en maximale breedte.
+            -->
+            <p class="intro">
+                HBO ICT student die momenteel in haar tweede jaar zit. Ik bouw webapplicaties
+                die snel, toegankelijk en aangenaam in gebruik zijn — van de database
+                tot de pixel.
+            </p>
+
+
+            <!--
+                Deze div bevat de twee knoppen.
+                CSS gebruikt flexbox om ze naast elkaar te zetten.
+            -->
+            <div class="buttons">
+
+                <!--
+                    Deze link brengt de bezoeker naar mijn projecten.
+                    De class primary maakt dit de belangrijkste knop.
+                -->
+                <a class="button primary" href="projecten.html">
+                    Projecten bekijken →
+                </a>
+
+                <!--
+                    mailto: opent het standaard e-mailprogramma
+                    van de gebruiker.
+                -->
+                <a class="button" href="mailto:delishaashruf@gmail.com">
+                    Contact opnemen
+                </a>
+
+            </div>
+        </div>
+
+
+        <!--
+            Afbeelding van mijzelf.
+            
+            alt is belangrijk voor toegankelijkheid.
+            Een schermlezer kan deze tekst gebruiken wanneer
+            iemand de afbeelding niet kan zien.
+        -->
+        <img
+            class="photo"
+            src="delisha.jpg"
+            alt="Portretfoto van Delisha Ashruf"
+        >
+
+    </section>
+
+
+    <!-- ==================== -->
+    <!-- OVER MIJ -->
+    <!-- ==================== -->
+
+    <!--
+        Deze sectie bevat persoonlijke informatie.
+        
+        .section geeft de algemene opmaak van een sectie.
+        .section-grid verdeelt de titel en tekst over twee kolommen.
+    -->
+    <section class="section">
+
+        <div class="section-grid">
+
+            <!-- Titel van de sectie. -->
+            <h2 class="section-title">Over mij</h2>
+
+            <!-- Tekstgedeelte van de sectie. -->
+            <div>
+
+                <p>
+                    Ik studeer al 4 jaar ICT en ben gefascineerd door het
+                    snijvlak van techniek en ontwerp. Mijn code is leesbaar en mijn
+                    interfaces zijn snel — niet toevallig, maar door bewuste keuzes.
+                </p>
+
+                <p>
+                    Naast mijn dagelijkse werk en studie draag ik bij aan open source projecten en
+                    schrijf ik over front-end architectuur.
+                </p>
+
+                <p>
+                    Buiten het scherm: Klantenservice, fysiek bezig zijn en bewegen .
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== -->
+    <!-- VAARDIGHEDEN -->
+    <!-- ==================== -->
+
+    <!--
+        Hier laat ik mijn vaardigheden zien.
+        
+        De verschillende onderdelen zijn verdeeld in
+        Frontend, Backend, DevOps en Tools.
+    -->
+    <section class="section">
+
+        <div class="section-grid">
+
+            <h2 class="section-title">Vaardigheden</h2>
+
+            <!--
+                .skills is een CSS Grid.
+                Op een groot scherm worden de vier categorieën
+                naast elkaar geplaatst.
+            -->
+            <div class="skills">
+
+
+                <!-- Frontend -->
+                <div>
+
+                    <h3>Frontend</h3>
+
+                    <!--
+                        ul wordt gebruikt omdat dit een lijst
+                        met vaardigheden is.
+                    -->
+                    <ul>
+                        <li>HTML</li>
+                        <li>JavaScript</li>
+                        <li>CSS</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- Backend -->
+                <div>
+
+                    <h3>Backend</h3>
+
+                    <ul>
+                        <li>C++</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>Object-Oriented Programming</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- DevOps -->
+                <div>
+
+                    <h3>DevOps</h3>
+
+                    <ul>
+                        <li>GitHub Actions</li>
+                        <li>Linux</li>
+                        <li>Bash / Shell Scripting</li>
+                        <li>Security Essentials</li>
+                        <li>Shellcode</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- Tools -->
+                <div>
+
+                    <h3>Tools</h3>
+
+                    <ul>
+                        <li>Git / GitHub</li>
+                        <li>IntelliJ IDEA</li>
+                        <li>Visual Studio Code</li>
+                        <li>Sublime Text</li>
+                        <li>MySQL workbench</li>
+                        <li>Figma</li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== -->
+    <!-- TIJDLIJN -->
+    <!-- ==================== -->
+
+    <!--
+        De tijdlijn geeft mijn opleiding en werkervaring
+        chronologisch weer.
+    -->
+    <section class="section">
+
+        <div class="section-grid">
+
+            <h2 class="section-title">Tijdlijn</h2>
+
+            <!--
+                ol betekent ordered list.
+                Ik gebruik dit omdat de items een bepaalde
+                chronologische volgorde hebben.
+            -->
+            <ol class="timeline">
+
+                <!--
+                    Het jaartal staat in een aparte span.
+                    CSS gebruikt vervolgens Grid om het jaartal
+                    en de beschrijving naast elkaar te zetten.
+                -->
+                <li>
+                    <span class="year">2023-2026</span>
+                    <div>
+                        <strong>Klantenservice/ Backoffice Medewerker</strong>
+                        <br>
+                        <span style="color:#6b6b6b;">IKEA</span>
+                    </div>
+                </li>
+
+                <li>
+                    <span class="year">2025-2026</span>
+                    <div>
+                        <strong>HBO ICT</strong>
+                        <br>
+                        <span style="color:#6b6b6b;">Haagse Hogeschool</span>
+                    </div>
+                </li>
+
+                <li>
+                    <span class="year">2024-2025</span>
+                    <div>
+                        <strong>BSc Data science & AI</strong>
+                        <br>
+                        <span style="color:#6b6b6b;">Universiteit Leiden</span>
+                    </div>
+                </li>
+
+                <li>
+                    <span class="year">2023-2024</span>
+                    <div>
+                        <strong>BSc Informatica</strong>
+                        <br>
+                        <span style="color:#6b6b6b;">Universiteit Leiden</span>
+                    </div>
+                </li>
+
+            </ol>
+        </div>
+    </section>
+
+</main>
+
+
+<!-- ==================== -->
+<!-- FOOTER -->
+<!-- ==================== -->
+
+<footer>
+
+    <!--
+        De footer bevat informatie onderaan de website.
+        .container houdt de breedte gelijk aan de rest van de pagina.
+    -->
+    <div class="container footer-content">
+
+        <!-- Copyrighttekst. -->
+        <p>
+            © 2026 Delisha Ashruf — Mijn portfolio
+        </p>
+
+
+        <div class="links">
+
+            <!--
+                target="_blank" opent de link in een nieuw tabblad.
+            -->
+            <a
+                href="https://github.com/delisha11"
+                target="_blank"
+            >
+                GitHub
+            </a>
+
+            <a
+                href="https://linkedin.com"
+                target="_blank"
+            >
+                LinkedIn
+            </a>
+
+            <!--
+                mailto: opent het standaard e-mailprogramma.
+            -->
+            <a href="mailto:delishaashruf@gmail.com">
+                delishaashruf@gmail.com
+            </a>
+
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

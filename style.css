@@ -1,0 +1,897 @@
+/* ==================== */
+/* BASIS */
+/* ==================== */
+
+/* 
+   De * selector geldt voor alle HTML-elementen.
+   box-sizing: border-box zorgt ervoor dat padding en border
+   worden meegerekend in de totale breedte en hoogte.
+   margin en padding worden eerst op 0 gezet zodat de browser
+   niet automatisch eigen marges toevoegt.
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+   :root bevat CSS-variabelen die ik overal in mijn stylesheet
+   opnieuw kan gebruiken.
+   
+   Hierdoor hoef ik bijvoorbeeld niet steeds #d4380a te typen.
+   Als ik de accentkleur later wil veranderen, hoef ik dat
+   maar op één plek te doen.
+*/
+:root {
+    --background: #ffffff;
+    --text: #0d0d0d;
+    --gray: #6b6b6b;
+    --border: #e5e5e5;
+    --accent: #d4380a;
+    --light: #f7f7f7;
+}
+
+/*
+   De body is de algemene basis van de hele pagina.
+   Hier bepaal ik bijvoorbeeld het standaard lettertype,
+   de achtergrondkleur, tekstkleur en regelafstand.
+*/
+body {
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/*
+   .container gebruik ik om de inhoud niet over de volledige
+   breedte van een groot scherm te laten lopen.
+   
+   width: 90% betekent dat er aan beide kanten ruimte blijft.
+   max-width zorgt ervoor dat de inhoud maximaal 1000px breed wordt.
+   margin: 0 auto centreert de container horizontaal.
+*/
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* ==================== */
+/* NAVIGATIE */
+/* ==================== */
+
+/*
+   De header bevat de navigatie.
+   
+   border-bottom geeft een dunne lijn onder de navigatie.
+   position: sticky zorgt ervoor dat de navigatie bovenaan blijft
+   staan wanneer ik naar beneden scroll.
+   top: 0 betekent dat hij tegen de bovenkant blijft.
+   z-index zorgt ervoor dat de header boven andere elementen blijft.
+*/
+header {
+    border-bottom: 1px solid var(--border);
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/*
+   display: flex maakt van de navigatie een flex-container.
+   align-items: center centreert de inhoud verticaal.
+*/
+nav {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+/*
+   De standaard bolletjes van de lijst worden verwijderd.
+   display: flex zet de navigatie-items naast elkaar.
+   gap bepaalt de ruimte tussen de links.
+*/
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+/*
+   Hier geef ik de navigatielinks hun uiterlijk.
+   text-decoration: none haalt de standaard onderstreping
+   van links weg.
+*/
+nav a {
+    text-decoration: none;
+    color: var(--gray);
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+}
+
+/*
+   :visited bepaalt hoe een link eruitziet nadat deze al
+   eerder is bezocht.
+   Ik houd dezelfde kleur zodat de navigatie niet ineens
+   van kleur verandert.
+*/
+nav a:visited {
+    color: var(--gray);
+}
+
+/*
+   :hover wordt toegepast wanneer ik met mijn muis over een link ga.
+   .active wordt gebruikt voor de huidige pagina.
+   
+   Beide krijgen de normale donkere tekstkleur.
+*/
+nav a:hover,
+nav a.active {
+    color: var(--text);
+}
+
+/*
+   De actieve pagina krijgt daarnaast een accentkleurige lijn
+   onder de link.
+*/
+nav a.active {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 3px;
+}
+
+
+/* ==================== */
+/* ALGEMENE TEKST */
+/* ==================== */
+
+/*
+   main is het belangrijkste inhoudsgebied van de pagina.
+   min-height zorgt ervoor dat de hoofdinhoud minimaal bijna
+   de volledige hoogte van het scherm inneemt.
+*/
+main {
+    min-height: calc(100vh - 140px);
+}
+
+/*
+   .page geeft boven en onder de pagina extra ruimte.
+*/
+.page {
+    padding: 70px 0;
+}
+
+/*
+   .label wordt gebruikt voor kleine categorie-labels,
+   bijvoorbeeld "whoami" bovenaan de homepage.
+   
+   text-transform maakt de tekst hoofdletters.
+   letter-spacing geeft extra ruimte tussen de letters.
+*/
+.label {
+    color: var(--accent);
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/*
+   h1 en h2 krijgen een ander lettertype dan de normale tekst.
+   font-weight: normal voorkomt dat de browser ze standaard vet maakt.
+*/
+h1,
+h2 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+}
+
+/*
+   h1 is de grootste titel op de pagina.
+   line-height bepaalt de verticale ruimte tussen regels.
+*/
+h1 {
+    font-size: 55px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+/* De tweede niveau koppen zijn iets kleiner. */
+h2 {
+    font-size: 30px;
+}
+
+/*
+   Alle paragrafen krijgen onderaan wat ruimte.
+*/
+p {
+    margin-bottom: 15px;
+}
+
+/*
+   .intro wordt gebruikt voor introductieteksten.
+   max-width voorkomt dat een lange tekstregel te breed wordt.
+*/
+.intro {
+    color: var(--gray);
+    font-size: 19px;
+    max-width: 650px;
+}
+
+
+/* ==================== */
+/* KNOPPEN */
+/* ==================== */
+
+/*
+   .buttons is een flex-container.
+   Hierdoor komen de knoppen naast elkaar te staan.
+   flex-wrap zorgt ervoor dat ze op een kleiner scherm
+   eventueel naar de volgende regel kunnen gaan.
+*/
+.buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+/*
+   De algemene opmaak van een knop/link.
+   Een <a> wordt hier visueel als knop weergegeven.
+*/
+.button {
+    display: inline-block;
+    padding: 11px 18px;
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/*
+   Ook bezochte knoppen houden dezelfde tekstkleur.
+*/
+.button:visited {
+    color: var(--text);
+}
+
+/*
+   .primary is de belangrijkste knop.
+   Deze krijgt een donkere achtergrond en witte tekst.
+*/
+.button.primary {
+    background: var(--text);
+    color: white;
+    border-color: var(--text);
+}
+
+.button.primary:visited {
+    color: white;
+}
+
+/*
+   Bij hover wordt de rand donkerder.
+*/
+.button:hover {
+    border-color: var(--text);
+}
+
+/*
+   De belangrijkste knop verandert bij hover naar de accentkleur.
+*/
+.button.primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+
+/* ==================== */
+/* WHOAMI / HERO */
+/* ==================== */
+
+/*
+   .hero is het bovenste gedeelte van de homepage.
+   
+   display: flex zet de tekst en foto naast elkaar.
+   justify-content: space-between duwt ze naar de zijkanten.
+   gap geeft ruimte tussen de tekst en foto.
+*/
+.hero {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: flex-start;
+    margin-bottom: 90px;
+}
+
+/*
+   flex: 1 zorgt ervoor dat de tekst beschikbare ruimte kan innemen.
+*/
+.hero-text {
+    flex: 1;
+}
+
+/*
+   De profielfoto krijgt een vaste grootte.
+   object-fit: cover zorgt ervoor dat de afbeelding
+   het hele vlak vult zonder vervormd te worden.
+   grayscale maakt de foto zwart-wit.
+*/
+.photo {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+
+/* ==================== */
+/* SECTIES */
+/* ==================== */
+
+/*
+   Elke .section krijgt bovenaan een scheidingslijn.
+   padding-top zorgt ervoor dat de inhoud niet direct tegen
+   de lijn staat.
+   margin-bottom geeft ruimte tot de volgende sectie.
+*/
+.section {
+    border-top: 1px solid var(--border);
+    padding-top: 45px;
+    margin-bottom: 70px;
+}
+
+/*
+   section-grid gebruikt CSS Grid.
+   
+   De eerste kolom is 180px breed voor de titel.
+   De tweede kolom neemt de resterende ruimte in met 1fr.
+*/
+.section-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 50px;
+}
+
+/*
+   Dit zijn de kleine sectietitels zoals "Over mij"
+   en "Vaardigheden".
+*/
+.section-title {
+    font-family: "Courier New", monospace;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 12px;
+    color: var(--gray);
+}
+
+
+/* ==================== */
+/* VAARDIGHEDEN */
+/* ==================== */
+
+/*
+   De vaardigheden worden in vier gelijke kolommen geplaatst.
+   repeat(4, 1fr) betekent: vier kolommen die dezelfde
+   beschikbare ruimte krijgen.
+*/
+.skills {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/*
+   De categorieën binnen vaardigheden krijgen een kleine
+   accentkleurige titel.
+*/
+.skills h3 {
+    font-family: "Courier New", monospace;
+    color: var(--accent);
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/*
+   De lijst met vaardigheden krijgt geen standaard bolletjes.
+*/
+.skills ul {
+    list-style: none;
+    color: var(--gray);
+    font-size: 14px;
+}
+
+
+/* ==================== */
+/* TIJDLIJN */
+/* ==================== */
+
+/*
+   Ook bij de tijdlijn verwijderen we de standaard
+   nummering/opmaak van de lijst.
+*/
+.timeline {
+    list-style: none;
+}
+
+/*
+   Iedere tijdlijnregel gebruikt CSS Grid.
+   
+   De eerste kolom van 60px is voor het jaartal.
+   De tweede kolom bevat de opleiding of werkervaring.
+*/
+.timeline li {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+}
+
+/*
+   De jaartallen krijgen een kleiner lettertype en grijze kleur.
+*/
+.year {
+    font-family: "Courier New", monospace;
+    color: var(--gray);
+    font-size: 12px;
+}
+
+
+/* ==================== */
+/* PROJECTEN */
+/* ==================== */
+
+/*
+   De projecten worden in twee kolommen weergegeven.
+   
+   De achtergrondkleur van de grid wordt gebruikt als
+   een dunne lijn tussen de kaarten.
+*/
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+}
+
+/*
+   Iedere projectkaart is een link.
+   display: block zorgt ervoor dat de hele kaart
+   als klikbaar blok kan functioneren.
+*/
+.project {
+    display: block;
+    background: white;
+    padding: 25px;
+    color: var(--text);
+    text-decoration: none;
+}
+
+/*
+   Een bezochte projectlink blijft dezelfde kleur houden.
+*/
+.project:visited {
+    color: var(--text);
+    text-decoration: none;
+}
+
+/*
+   Bij hover krijgt de projectkaart een lichte achtergrond.
+*/
+.project:hover {
+    background: var(--light);
+    color: var(--text);
+    text-decoration: none;
+}
+
+/*
+   De projecttitel blijft donker wanneer de kaart
+   wordt aangeraakt of bezocht.
+*/
+.project h2 {
+    color: var(--text);
+}
+
+/*
+   .project-image is de container rondom de afbeelding.
+   position: relative is belangrijk omdat het pijltje
+   absoluut ten opzichte van deze container wordt geplaatst.
+   overflow: hidden zorgt ervoor dat de afbeelding niet
+   buiten de container zichtbaar wordt.
+*/
+.project-image {
+    position: relative;
+    overflow: hidden;
+}
+
+/*
+   De projectafbeelding vult de volledige breedte.
+   object-fit: cover voorkomt vervorming.
+   transition zorgt ervoor dat de hover-animatie soepel verloopt.
+*/
+.project img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease;
+}
+
+/*
+   Bij hover wordt de afbeelding een klein beetje groter.
+*/
+.project:hover img {
+    transform: scale(1.02);
+}
+
+
+/* Pijltje op afbeelding */
+
+/*
+   Het pijltje wordt bovenop de afbeelding geplaatst.
+   position: absolute werkt ten opzichte van .project-image,
+   omdat die position: relative heeft.
+*/
+.project-arrow {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 35px;
+    height: 35px;
+
+    /*
+       Flex wordt hier gebruikt om het pijltje
+       precies horizontaal en verticaal te centreren.
+    */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+    color: var(--text);
+
+    font-size: 18px;
+
+    /*
+       Het pijltje is standaard onzichtbaar.
+    */
+    opacity: 0;
+
+    /*
+       Het pijltje staat eerst een klein stukje naar links.
+    */
+    transform: translateX(-5px);
+
+    /*
+       Wanneer opacity en transform veranderen,
+       gebeurt dit geleidelijk in plaats van direct.
+    */
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+/*
+   Zodra de projectkaart wordt gehov erd,
+   wordt het pijltje zichtbaar en schuift het naar zijn normale positie.
+*/
+.project:hover .project-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Projecttekst */
+
+/*
+   De projecttitel krijgt wat ruimte onder zich.
+*/
+.project h2 {
+    margin-bottom: 8px;
+}
+
+/*
+   .tagline is de korte omschrijving onder de titel.
+*/
+.project .tagline {
+    color: var(--gray);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/*
+   Dit selecteert paragrafen binnen .project-content
+   die geen .tagline hebben.
+   
+   Hierdoor krijgt de gewone projectbeschrijving
+   een grijze kleur.
+*/
+.project-content > p:not(.tagline) {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+
+/* Status */
+
+/*
+   .status wordt gebruikt voor bijvoorbeeld
+   "schoolopdracht" of "challenge".
+*/
+.status {
+    display: inline-block;
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    padding: 4px 7px;
+    margin-bottom: 12px;
+    background: var(--light);
+    color: var(--gray);
+}
+
+
+/* Tags */
+
+/*
+   De tags worden naast elkaar geplaatst.
+   flex-wrap zorgt ervoor dat ze op een nieuwe regel
+   kunnen komen als er niet genoeg ruimte is.
+*/
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 15px;
+}
+
+/*
+   Iedere afzonderlijke tag krijgt een lichte achtergrond
+   en een klein lettertype.
+*/
+.tag {
+    background: var(--light);
+    color: var(--text);
+    padding: 4px 7px;
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+}
+
+
+/* Bekijk project */
+
+/*
+   Dit is de tekstlink onderaan iedere projectkaart.
+*/
+.project-link-text {
+    display: inline-block;
+    margin-top: 22px;
+    color: var(--text);
+    text-decoration: none;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+}
+
+/*
+   Bij hover wordt de link onderstreept.
+*/
+.project:hover .project-link-text {
+    text-decoration: underline;
+}
+
+
+/* ==================== */
+/* BLOG */
+/* ==================== */
+
+/*
+   .category wordt gebruikt voor categorieën zoals
+   C++, Java of Challenge.
+*/
+.category {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 3px 7px;
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    margin-bottom: 12px;
+}
+
+/*
+   De datum krijgt een kleiner monospace lettertype
+   en een grijze kleur.
+*/
+.date {
+    color: var(--gray);
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+}
+
+
+/* ==================== */
+/* FOOTER */
+/* ==================== */
+
+/*
+   De footer heeft bovenaan een scheidingslijn.
+*/
+footer {
+    border-top: 1px solid var(--border);
+    padding: 30px 0;
+}
+
+/*
+   De inhoud van de footer wordt naast elkaar geplaatst.
+*/
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/*
+   De tekst en links in de footer krijgen dezelfde
+   kleine monospace stijl.
+*/
+footer p,
+footer a {
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    color: var(--gray);
+}
+
+/*
+   De links krijgen ruimte tussen elkaar.
+*/
+footer a {
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/*
+   Bezochte links blijven grijs.
+*/
+footer a:visited {
+    color: var(--gray);
+}
+
+/*
+   Bij hover wordt de link accentkleurig.
+*/
+footer a:hover {
+    color: var(--accent);
+}
+
+
+/* ==================== */
+/* MOBIEL */
+/* ==================== */
+
+/*
+   Media queries zorgen ervoor dat de website
+   responsive is.
+   
+   Deze regels worden toegepast wanneer het scherm
+   maximaal 700px breed is, bijvoorbeeld op een tablet
+   of kleinere laptop/telefoon.
+*/
+@media (max-width: 700px) {
+
+    /*
+       Op een kleiner scherm is minder verticale ruimte nodig.
+    */
+    .page {
+        padding: 45px 0;
+    }
+
+    /*
+       De grote titel wordt kleiner zodat hij
+       beter op een klein scherm past.
+    */
+    h1 {
+        font-size: 42px;
+    }
+
+    /*
+       De hero wordt onder elkaar geplaatst in plaats
+       van naast elkaar.
+    */
+    .hero {
+        display: block;
+    }
+
+    /*
+       De foto wordt kleiner en krijgt bovenaan ruimte
+       wanneer hij onder de tekst komt te staan.
+    */
+    .photo {
+        margin-top: 30px;
+        width: 150px;
+        height: 150px;
+    }
+
+    /*
+       De twee kolommen van de secties worden één kolom.
+       Hierdoor staan de titel en inhoud onder elkaar.
+    */
+    .section-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /*
+       Op dit scherm worden vaardigheden en projecten
+       in twee kolommen weergegeven.
+    */
+    .skills,
+    .project-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /*
+       De ruimte tussen de navigatielinks wordt kleiner.
+    */
+    nav ul {
+        gap: 18px;
+    }
+
+    /*
+       De footer wordt onder elkaar geplaatst.
+    */
+    .footer-content {
+        display: block;
+    }
+
+    /*
+       Er komt ruimte tussen de footer-tekst en links.
+    */
+    footer .links {
+        margin-top: 15px;
+    }
+
+    /*
+       Op mobiel wordt de horizontale marge van de links
+       vervangen door een rechter marge.
+    */
+    footer a {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+}
+
+
+/*
+   Nog een kleinere breakpoint voor schermen
+   van maximaal 480px breed.
+*/
+@media (max-width: 480px) {
+
+    /*
+       Op een heel klein scherm komen de vaardigheden
+       en projecten volledig onder elkaar.
+    */
+    .skills,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /*
+       Nog minder ruimte tussen de navigatielinks.
+    */
+    nav ul {
+        gap: 12px;
+    }
+
+    /*
+       De navigatietekst wordt iets kleiner.
+    */
+    nav a {
+        font-size: 12px;
+    }
+}
